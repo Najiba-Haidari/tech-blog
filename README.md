@@ -71,9 +71,10 @@ Below are some screenshots of the app.
 ![Application Screenshot -signup](./assets/images/screenshot-signup.jpg)
 ![Application Screenshot -dashboard](./assets/images/screenshot-dashboard.jpg)
 
-## URL of Github Repository
+## URL of Github Repository and Heroku
 
-Github Repo URL: https://najiba-haidari.github.io/tech-blog/
+Github Repo URL: https://najiba-haidari.github.io/tech-blog/ ,
+
 Heroku URL: https://ancient-eyrie-20043.herokuapp.com
 
 ## Credits
