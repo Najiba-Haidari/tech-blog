@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Tech Word</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+
+  <div class="container .col-12">
+    <header id="home">
+        <h1 class="">The Tech Word</h1>
+        <nav class="navbar">
+            {{#if loggedIn}}
+            <a href="/" class="navbar-item">homepage</a>
+            <a href="/dashboard" class="navbar-item">dashboard</a>
+            <a href="/dashboard/create/" class="navbar-item">create post</a>
+            <button id="logout" class="button logout">logout</button>
+            {{else}}
+            <a href="/" class="navbar-item pt-1">homepage</a>
+            <a href="/login" class="btn login">login</a>
+            {{/if}}
+        </nav>
+    </header>
+    <h1>Your Posts:</h1>
+    <main class="container">
+            <!-- {{{ body }}} -->
+            <div class="row mb-1">
+              <a href="/dashboard/create/"><button id="create-post" class="btn">create post</button></a>
+            <div class="card post d-flex">
+                <div class="card-body post-body">
+                  <h4 class="card-title post-title">Card title <a href="/dashboard/edit/{{post.id}}"><button class="btn">edit post</button></a></h4>
+                  
+                  <p class="card-text post-text">
+                    Some quick example text to build on the card title
+                    and make up the bulk of the card's content.
+                    Some quick example text to build on the card title
+                    and make up the bulk of the card's content.
+                    Some quick example text to build on the card title
+                    and make up the bulk of the card's content.
+                    Some quick example text to build on the card title
+                    and make up the bulk of the card's content.
+                    Some quick example text to build on the card title
+                    and make up the bulk of the card's content.
+                  </p>
+                  <a href="#!" class="btn btn-primary post-button">View Post</a>
+                  <p class="post-date">Posted On: 06/04/2020 by <span class="post-username">leonhsu95</span></p>
+                </div>
+            </div>
+            </div>
+            <!-- <div class="row">
+            <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Card title</h4>
+                  <p class="card-text">
+                    Some quick example text to build on the card title
+                    and make up the bulk of the card's content.
+                  </p>
+                  <a href="#!" class="btn btn-primary post-button">View Post</a>
+                </div>
+            </div>
+            </div> -->
+    </main>
+
+<footer class="footer rows footer-margin">
+        <div class="row-is-full content has-text-centered">
+            <p>
+            <a href="#home">Back to Top</a>
+            </p>
+        </div>
+      <div class="row-is-full content has-text-centered">
+    <p>
+      The Tech Word by <a href="https://github.com/leonhsu95"> Leon Hsu</a>
+    </p>
+  </div>
+    </footer>
+  </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+<script src="js/logout.js"></script>
+</body>
+
+</html>

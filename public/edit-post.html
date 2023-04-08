@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Tech Word</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+
+  <div class="container .col-12">
+    <header id="home">
+        <h1 class="">The Tech Word</h1>
+        <nav class="navbar">
+            {{#if loggedIn}}
+            <a href="/" class="navbar-item">homepage</a>
+            <a href="/dashboard" class="navbar-item">dashboard</a>
+            <a href="/dashboard/create/" class="navbar-item">create post</a>
+            <button id="logout" class="button logout">logout</button>
+            {{else}}
+            <a href="/" class="navbar-item pt-1">homepage</a>
+            <a href="/login" class="btn login">login</a>
+            {{/if}}
+        </nav>
+    </header>
+
+    <main class="container">
+            <!-- {{{ body }}} -->
+            <div class="row mb-1">
+                <a href="/dashboard" class=""> &larr; Dashboard</a>
+                <h1>Edit Post</h1>
+                <form class="edit-post-form">
+                    <div class="mb-3">
+                       <label for="post-title" class="form-label">Post Title:</label>
+                       <input type="text" name="post-title" id="email-signup" class="form-control input" value="{{post.title}}"/>
+                     </div>
+                     <div class="mb-3">
+                       <label for="post-content" class="form-label">Content</label>
+                       <input class="textarea form-control" name="post-content" type="text" value="{{post.post_content}}" />
+                     </div>
+                     <div class="mb-3">
+                       <button type="submit" class="btn is-success">Save</button>
+                       <button type="button" class="btn is-danger delete-post-btn">Delete</button>
+                     </div>
+                   </form>
+            </div>
+    </main>
+
+<footer class="footer rows footer-margin">
+        <div class="row-is-full content has-text-centered">
+            <p>
+            <a href="#home">Back to Top</a>
+            </p>
+        </div>
+      <div class="row-is-full content has-text-centered">
+    <p>
+      The Tech Word by <a href="https://github.com/leonhsu95"> Leon Hsu</a>
+    </p>
+  </div>
+    </footer>
+  </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+<script src="/javascript/edit-post.js"></script>
+<script src="/javascript/delete-post.js"></script>
+<script src="/javascript/comment.js"></script>
+</body>
+
+</html>
