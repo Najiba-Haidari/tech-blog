@@ -72,7 +72,8 @@ Below are some screenshots of the app.
 ![Application Screenshot -dashboard](./assets/images/screenshot-dashboard.jpg)
 
 ## URL of Github Repository
-Repo URL: 
+
+Github Repo URL: https://najiba-haidari.github.io/tech-blog/
 
 ## Credits
 
