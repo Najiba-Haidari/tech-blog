@@ -74,6 +74,7 @@ Below are some screenshots of the app.
 ## URL of Github Repository
 
 Github Repo URL: https://najiba-haidari.github.io/tech-blog/
+Heroku URL: https://ancient-eyrie-20043.herokuapp.com
 
 ## Credits
 
