@@ -1,5 +1,7 @@
+{{!-- loop through the posts array and displaying each post in a specific format of post-info partial --}}
 {{#each posts as |post| }}
 <article class="post">
+    {{!-- post-info partial --}}
     {{> post-info post}}
 </article>
 {{/each}}

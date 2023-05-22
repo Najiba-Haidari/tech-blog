@@ -1,6 +1,8 @@
+{{!-- single-post handlebars --}}
 <section class="single-post-container">
+    {{!-- Uses a partial to display all the information of a single post --}}
 {{> post-info post}}
-
+{{!-- Checks if the user is logged in or not using an if-block helper --}}
 {{#if loggedIn}}
 <div class="comment-container">
     <h3 class="card-header"></h3>
@@ -13,11 +15,11 @@
     </form>
 </div>
 {{/if}}
-
+{{!-- Uses another partial to display all the comments related to that post. --}}
 {{> comments post.comments}}
 
 </section>
-
+{{!-- if loggedIn the the it is connected to comment.js --}}
 {{#if loggedIn}}
 <script src="/js/comment.js"></script>
 {{/if}}

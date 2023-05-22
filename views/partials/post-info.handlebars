@@ -1,8 +1,11 @@
 
     <div class="card ">
+        {{!-- card header title with link attached to the title --}}
        <h4 class="card-header-title content has-background-success "><a class="link" href="/post/{{id}}">{{title}}</a></h4>
         <div class="card-content">
+        {{!-- Post content --}}
         <p class="content ">{{content}}</p>
+        {{!-- Displaying the name and creation date of the user who posted the message--}}
         <p class="content">Posted by <span>{{user.username}}</span> on {{format_date created_at}}</p>
         </div>
     </div>

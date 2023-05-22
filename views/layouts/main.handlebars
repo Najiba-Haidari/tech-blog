@@ -15,6 +15,7 @@
       <nav class="navbar has-background-primary">
             <a class="link navbar-item navbar-item my-1  button is-primary is-medium" href="/">Home</a>
               <a class="link navbar-item navbar-item my-1  button is-primary is-medium" href="/dashboard">Dashboard</a>
+              {{!-- if loggedin then this logout can be displayed in nav else the login will be only displayed--}}
               {{#if loggedIn}}
               <a class="link navbar-item navbar-item my-1  button is-primary is-medium" href="/" id="logout">Logout</a>
               {{else}}
@@ -23,7 +24,7 @@
       </nav>
       
 </header>
-
+{{!-- {{{body}}} is the template engine placeholder for the actual page content   --}}
 <main>
   <h1 class="title content has-text-centered mt-3"><a  href="/">Your Tech Blog</a></h1>
   {{{ body }}}
@@ -32,7 +33,7 @@
 <footer class="footer">
     <p>Prepared by Najiba Haidari @ DU BOOTCAMP OF 2023</p>
 </footer>
-
+{{!-- if the user log in then the logout.js is connected --}}
     {{#if loggedIn}}
     <script src="/js/logout.js"></script>
     {{/if}}

@@ -1,7 +1,12 @@
+//// set up a router object to define routes in express application
 const router = require('express').Router();
+// import Post, User and Comment models 
 const { User, Post, Comment } = require('../../models');
+
+// get all users from database
 router.get('/', (req, res) => {
     User.findAll({
+        // excluding the password attribute
             attributes: { exclude: ['[password'] }
         })
         .then(dbUserData => res.json(dbUserData))
@@ -10,13 +15,15 @@ router.get('/', (req, res) => {
             res.status(500).json(err);
         });
 });
-
+// get the user by its specific id excluding the password attribute
+// if the user id is not correct it gives error
 router.get('/:id', (req, res) => {
     User.findOne({
             attributes: { exclude: ['password'] },
             where: {
                 id: req.params.id
             },
+            //including the below attributes from post model and comment model
             include: [{
                     model: Post,
                     attributes: [
@@ -54,7 +61,8 @@ router.get('/:id', (req, res) => {
         });
 });
 
-
+// add/create new user by taking the username, email and password
+// and save them in database
 router.post('/', (req, res) => {
 
     User.create({
@@ -64,6 +72,7 @@ router.post('/', (req, res) => {
     })
 
     .then(dbUserData => {
+        // save the user session data
             req.session.save(() => {
                 req.session.user_id = dbUserData.id;
                 req.session.username = dbUserData.username;
@@ -77,7 +86,8 @@ router.post('/', (req, res) => {
             res.status(500).json(err);
         });
 });
-
+// logs in a user by finding the user using their user name and 
+// and check if the password is valid and if not valid, it gives error
 router.post('/login', (req, res) => {
     User.findOne({
             where: {
@@ -94,8 +104,9 @@ router.post('/login', (req, res) => {
                 res.status(400).json({ message: 'Incorrect password!' });
                 return;
             }
+            // save the user session data
             req.session.save(() => {
-
+ 
                 req.session.user_id = dbUserData.id;
                 req.session.username = dbUserData.username;
                 req.session.loggedIn = true;
@@ -108,7 +119,8 @@ router.post('/login', (req, res) => {
             res.status(500).json(err);
         });
 });
-
+// logs out the user by destroying the session in case logged in
+//gives 404 error if there is no session to end
 router.post('/logout', (req, res) => {
     if (req.session.loggedIn) {
         req.session.destroy(() => {
@@ -118,7 +130,8 @@ router.post('/logout', (req, res) => {
         res.status(404).end();
     }
 });
-
+// update a user by its specific id applying the update method to User model
+// if no user with that id is found it gives error
 router.put('/:id', (req, res) => {
 
     User.update(req.body, {
@@ -140,7 +153,8 @@ router.put('/:id', (req, res) => {
         });
 
 });
-
+// listens for delete request of a user by its specific id
+// it destroy the user where the id is met otherwise gives error message
 router.delete('/:id', (req, res) => {
     User.destroy({
             where: {

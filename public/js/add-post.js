@@ -1,3 +1,8 @@
+// creating async function of newFormHandler to create new post.
+// it is geting the values entried to the title and content fields
+// it is using the POST method to send the data to the API endpoint
+// if the response is ok, the user is redirected to the dashboard
+// if not, an alert is displayed with the error message
 async function newFormHandler(event) {
     event.preventDefault();
   
